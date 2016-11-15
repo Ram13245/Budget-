@@ -1,14 +1,13 @@
 #include <string>
-#include <time.h>
+#include "time.h"
 #include <iostream>
-#include "error.h"
 
 using namespace std;
 
 class Expense
 {
 public:
-	Expense(Error& err, const float& amt, const string& cat, const time_t d, const string& note = "");
+	Expense(const float& amt, const string& cat, const time_t d, const string& note = "");
 	float getAmount() const;
 	string getCategory() const;
 	time_t getDate() const;
