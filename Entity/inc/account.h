@@ -7,15 +7,18 @@
 
 using namespace std;
 
-class account{
+class Account{
 public:
-	account(string usr);
+	Account(string usr);
 	string getUsername() const;
 	vector<Budget> getPeriods() const;
 	void startNextPeriod();
+	~Account(); //Destructor
+	Account(const Account& right);
+	Account& operator=(const Account& right);
 private:
 	string username;
-	vector<Budget> period;
+	vector<Budget>* period;
 };
 
 #endif
