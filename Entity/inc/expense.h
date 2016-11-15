@@ -1,6 +1,7 @@
 #include <string>
-#include <time>
+#include <time.h>
 #include <iostream>
+#include "error.h"
 
 using namespace std;
 
@@ -14,10 +15,11 @@ public:
 	string getNote() const;
 
 private:
+	float amount;
 	string category;
 	time_t date;
 	string note;
 	int id;
 	
-	friend ostream &operator<<(ostream &out);
+	friend ostream &operator<<(ostream &out, const Expense &E);
 };
