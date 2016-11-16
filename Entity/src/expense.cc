@@ -1,7 +1,6 @@
 #include "expense.h"
 
-Expense::Expense(Error& err, const float& amt, const string& cat, const time_t d, const string& n = ""){
-
+Expense::Expense(const float& amt, const string& cat, const time_t d, const string& n = ""){
 	amount = amt;
 	category = cat;
 	date = d;
