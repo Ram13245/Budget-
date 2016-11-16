@@ -9,7 +9,7 @@ using namespace std;
 class Budget
 {
 public:
-	Budget(const float& amt, const time_t& sDate, const time_t& eDate, vector<Category>& categories);
+	Budget(const float& amt, const time_t& sDate, const time_t& eDate, vector<Category>& cats);
 	float getTotalAmount() const;
 	pair<time_t,time_t> getDateRange() const;
 	vector<Category> getCategories() const;
