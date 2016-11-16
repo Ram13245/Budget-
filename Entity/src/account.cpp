@@ -1,19 +1,33 @@
 // This is account entity cpp file.
 
-#include "account.h"
+#include "Account.h"
 
-account::account(string usr){
+Account::Account(string usr){
 	this->username = usr;
 }
 
-string account::getUsername(){
+string Account::getUsername(){
 	return this->username;
 }
 
-vector<Budget> account::getPeriods(){
+vector<Budget> Account::getPeriods(){
 	return this->period;
 }
 
-void account::startNextPeriod(){
+void Account::startNextPeriod(){
+}
+
+//Destructor
+Account::~Account(){
+	for (Budget b: period) {
+		delete b;
+	}
+	delete[] period;
+}
+
+Account::Account(const Account& right){
+}
+
+Account& Account::operator=(const Account& right){
 
 }
