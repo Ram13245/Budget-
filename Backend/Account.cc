@@ -1,6 +1,6 @@
 // This is account entity cpp file.
 
-#include "../inc/Account.h"
+#include "Account.h"
 
 Account::Account(string usr){
 	username = usr;

@@ -1,4 +1,4 @@
-#include "../inc/Category.h"
+#include "Category.h"
 
 Category::Category(string name, float pct) : m_name(name), m_percentage(pct)
 {

@@ -1,4 +1,4 @@
-#include "../inc/Expense.h"
+#include "Expense.h"
 
 Expense::Expense(const float& amt, const string& cat, const time_t d, const string& n){
 	amount = amt;

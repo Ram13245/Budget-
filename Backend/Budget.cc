@@ -1,4 +1,4 @@
-#include "../inc/Budget.h"
+#include "Budget.h"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "../inc/Error.h"
+#include "Error.h"
 
 Error::Error() : m_isErr(false), m_message("")
 {
