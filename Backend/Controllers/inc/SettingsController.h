@@ -1,14 +1,15 @@
 //Settings Controller Header File
-#ifndef SETTINGS_H_
-#define SETTINGS_H_
+#pragma once
 
 #include <string>
+#include "../../Entity/inc/Account.h"
+#include "../../Entity/inc/Error.h"
 
 using namespace std;
 
 class SettingsController{
 	public:
 	void addCategory(string name, double perc);
-	Category changeCategory(string name, double perc);
+	void changeCategory(string name, double perc);
 	void removeCategory(string name);
 };

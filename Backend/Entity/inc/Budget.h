@@ -1,6 +1,11 @@
+#pragma once
+
 #include <string>
-#include "time.h"
+#include <ctime>
 #include <iostream>
+#include <map>
+#include <vector>
+
 #include "Expense.h"
 #include "Category.h"
 
@@ -13,7 +18,7 @@ public:
 	float getTotalAmount() const;
 	pair<time_t,time_t> getDateRange() const;
 	vector<Category> getCategories() const;
-	map<string, vector<Expense>> getAllExpenses() const;
+	map<string, vector<Expense> > getAllExpenses() const;
 	vector<Expense> getExpenses(const string& cat) const;
 	void changeTotalAmount(const float& newAmt);
 	void changeCategories(vector<Category> cats);
@@ -24,9 +29,9 @@ private:
 	float totalAmount;
 	time_t startDate;
 	time_t endDate;
-	map<string, category> categories;
-	map<string, vector<Expense>> expenses; 
-}
+	map<string, Category> categories;
+	map<string, vector<Expense> > expenses; 
+};
 
 
 

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include "time.h"
 #include <iostream>
@@ -12,6 +14,7 @@ public:
 	string getCategory() const;
 	time_t getDate() const;
 	string getNote() const;
+	ostream &operator<<(ostream &out);
 
 private:
 	float amount;
@@ -20,5 +23,4 @@ private:
 	string note;
 	int id;
 	
-	friend ostream &operator<<(ostream &out, const Expense &E);
 };

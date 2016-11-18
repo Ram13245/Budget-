@@ -1,9 +1,10 @@
 // Account entity header file.
-#ifndef ACCOUNT_H_
-#define ACCOUNT_H_
+#pragma once
 
 #include <string>
 #include <vector>
+
+#include "Budget.h"
 
 using namespace std;
 
@@ -21,4 +22,3 @@ private:
 	vector<Budget>* period;
 };
 
-#endif
