@@ -1,4 +1,4 @@
-#include "../Controllers/inc/AccountController.h"
+#include "../AccountController.h"
 
 int main() {
     cout << "Hello world!" << endl;

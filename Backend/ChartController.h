@@ -12,7 +12,7 @@ class ChartController {
 public:
   ChartController();
   void getBudgetPie(Error& err, map<string, float>&);
-  void getBurndown(Error& err, vector<pair<time_t,float>>&); // daily
+  void getBurndown(Error& err, vector<pair<time_t,float> >&); // daily
   void getBudgetBar(Error& err, map<string, float>&);
   void getHabitPie(Error& err, map<string, float>&);
-}
+};

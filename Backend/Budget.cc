@@ -24,7 +24,7 @@ vector<Category> Budget::getCategories() const{
     return ret;
 }
 
-map<string, vector<Expense>> Budget::getAllExpenses() const{ 
+map<string, vector<Expense> > Budget::getAllExpenses() const{ 
 	return expenses;
 }
 
