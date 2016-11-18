@@ -11,8 +11,8 @@ public:
     string getMessage() const;
 
 private:
-    bool m_isErr;
-    string m_message;
+    bool isErr;
+    string message;
 
 
     friend Error& operator+=(Error& err, string msg);

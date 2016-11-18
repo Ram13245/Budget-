@@ -15,6 +15,7 @@ public:
     vector<string> getCategories() const;
 
 private:
-    bool m_loggedIn;    // state flag
+    bool loggedIn;    // state flag
+    Account* account;
 };
 

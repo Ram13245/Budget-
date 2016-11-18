@@ -8,7 +8,8 @@
 using namespace std;
 
 class SettingsController{
-	public:
+public:
+	SettingsController();
 	void addCategory(string name, double perc);
 	void changeCategory(string name, double perc);
 	void removeCategory(string name);

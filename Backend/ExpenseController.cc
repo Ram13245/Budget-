@@ -1,6 +1,10 @@
 #include "ExpenseController.h"
 
 // didn't include constructor, may not be applicable for ExpenseController class
+ExpenseController::ExpenseController()
+{
+	//TODO
+}
 
 //takes the necessary parameters for creating a new Expense object & calls functions to add it to the data
 void ExpenseController::addExpense(Error& err, const float& amt, const string& cat, time_t date, const string& note){

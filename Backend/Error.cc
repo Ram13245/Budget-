@@ -1,24 +1,24 @@
 #include "Error.h"
 
-Error::Error() : m_isErr(false), m_message("")
+Error::Error() : isErr(false), message("")
 {
 }
 
 string Error::getMessage() const
 {
-    return m_message;
+    return message;
 }
 
 Error& operator+=(Error& err, string msg)
 {
-    if (err.m_message == "") {
-        err.m_message = msg;
+    if (err.message == "") {
+        err.message = msg;
     }
     else {
-        err.m_message += " " + msg;
+        err.message += " " + msg;
     }
 
-    err.m_isErr = true;
+    err.isErr = true;
 
     return err;
 }

@@ -8,6 +8,7 @@
 
 class ExpenseController
 {
+	ExpenseController();
 private:
     void addExpense(Error& err, const float& amt, const string& cat, time_t date, const string& note = "");
     void deleteExpense(Error& err, int idx);

@@ -1,29 +1,33 @@
 #include "Category.h"
 
-Category::Category(string name, float pct) : m_name(name), m_percentage(pct)
+Category::Category(string name, float pct) : name(name), percentage(pct)
 {
+	//TODO
 }
 
 Category::~Category()
 {
+	//TODO
 }
 
 string Category::getName() const
 {
-    return m_name;
+    return name;
 }
 
 float Category::getPercentage() const
 {
-    return m_percentage;
+    return percentage;
 }
 
 void Category::changePercentage(float pct)
 {
+	//TODO
 }
 
 ostream& Category::operator<<(ostream& out) const
 {
+	//TODO
     return out;
 }
 

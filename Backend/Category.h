@@ -17,8 +17,8 @@ public:
     ostream& operator<<(ostream&) const;
 
 private:
-    string m_name;
-    float m_percentage;
+    string name;
+    float percentage;
 
 };
 
