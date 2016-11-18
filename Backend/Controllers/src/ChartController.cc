@@ -5,15 +5,15 @@
 
 using namespace std;
 
-void getBudgetPie(Error& err, map<string, float>& categories){
+void ChartController::getBudgetPie(Error& err, map<string, float>& categories){
 
 }
-void getBurndown(Error& err, vector<pair<time_t,float>>& exp){
-
-} 
-void getSpendingPie(Error& err, map(string, float>& ){
+void ChartController::getBurndown(Error& err, vector<pair<time_t,float>>& exp){
 
 }
-void getBudgetBar(Error& err, map<string, float>& ){
+void ChartController::getSpendingPie(Error& err, map(string, float>& ){
+
+}
+void ChartController::getBudgetBar(Error& err, map<string, float>& ){
 
 }
