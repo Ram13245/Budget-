@@ -14,6 +14,7 @@ public:
 	pair<time_t,time_t> getDateRange() const;
 	vector<Category> getCategories() const;
 	map<string, vector<Expense>> getAllExpenses() const;
+	Budget getBudget();
 	vector<Expense> getExpenses(const string& cat) const;
 	void changeTotalAmount(const float& newAmt);
 	void changeCategories(vector<Category> cats);
