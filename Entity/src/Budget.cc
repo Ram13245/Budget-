@@ -27,10 +27,6 @@ vector<Expense> Budget::getExpenses(const string& cat) const{
 void Budget::changeTotalAmount(const float& newAmt){
 	totalAmount = newAmt;}
 
-Budget Budget::getBudget(){
-	return this->Budget;
-}
-
 void Budget::changeCategories(vector<Category> cats){};
 void Budget::deleteExpenses(vector<int> ids){};
 void Budget::addExpenses(vector<Expense> expenses){};
