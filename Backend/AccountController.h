@@ -1,3 +1,4 @@
+// Account Controller header file.
 #pragma once
 
 #include "ChartController.h"
@@ -6,6 +7,10 @@
 
 class AccountController
 {
+	friend class Account;
+	friend class Budget;
+	friend class Category;
+	friend class Expense;
 public:
     AccountController();
     void attemptLogin(Error& err, const string& usr, const string& pass);

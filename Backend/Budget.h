@@ -24,7 +24,6 @@ public:
 	void changeCategories(vector<Category> cats);
 	void deleteExpenses(vector<int> ids);
 	void addExpenses(vector<Expense> expenses);
-
 private:
 	float totalAmount;
 	time_t startDate;

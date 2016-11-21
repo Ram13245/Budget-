@@ -1,3 +1,4 @@
+// Account Controller cpp file.
 #include "AccountController.h"
 
 AccountController::AccountController() : loggedIn(false), account(nullptr)
