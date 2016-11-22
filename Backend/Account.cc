@@ -4,21 +4,17 @@
 Account::Account(string usr) {
 	string inputs = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";
 	this->period = nullptr;
-	bool flag = true;
 	if(usr.length() < 3 || usr.length() > 15)
-		cerr << "Username length must be between 3 and 15!" << endl;
-		flag = false;
+		cerr << "Username length must be between 3 and 15 characters!" << endl;
+	else{
 	for (char& a : usr){
-		cout << a << endl;
-		if(inputs.find(a) == std::string::npos){
-			cerr << "Username must only contain letters and numbers!" << endl;
-			flag = false;
+		if(inputs.find(a) !=std::string::npos){
+			this->username = usr;
+		}
+		else
+			cerr << "Username can only contain letters and numbers" << endl;
 		}
 	}
-	if (flag){
-		this->username = usr;
-	}
-
 }
 
 string Account::getUsername() const{
