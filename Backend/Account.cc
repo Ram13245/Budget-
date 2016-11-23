@@ -5,14 +5,14 @@ Account::Account(string usr) {
 	string inputs = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";
 	this->period = nullptr;
 	if(usr.length() < 3 || usr.length() > 15)
-		cerr << "Username length must be between 3 and 15 characters!" << endl;
+		cout << "Username length must be between 3 and 15 characters!" << endl;
 	else{
 	for (char& a : usr){
 		if(inputs.find(a) !=std::string::npos){
 			this->username = usr;
 		}
 		else
-			cerr << "Username can only contain letters and numbers" << endl;
+			cout << "Username can only contain letters and numbers" << endl;
 		}
 	}
 }
@@ -38,12 +38,9 @@ void Account::startNextPeriod(){
 //Destructor
 Account::~Account(){
 	//TODO
-//	for (Budget* b: *period) {
-//		delete b;
-//		b = nullptr;
-//	}
-//	delete[] period;
-//	period = nullptr;
+	period->clear();
+	delete period;
+	period = nullptr;
 }	//Done
 
 Account::Account(const Account& right) : username("") {
@@ -60,15 +57,13 @@ Account::Account(const Account& right) : username("") {
 
 Account& Account::operator=(const Account& right){
 	//TODO
-//	if (this != &right){
-//		for (Budget b: *period){
-//			delete b;
-//		}
-//		delete[] period;
-//		this->username = right.getUsername();
-//		for (Budget b: right.getPeriods()){
-//			period->push_back(b);
-//		}
-//	}
-//    return *this;
+	if (this != &right){
+		period->clear();
+		delete period;
+		this->username = right.getUsername();
+		for (Budget b: right.getPeriods()){
+			period->push_back(b);
+		}
+	}
+    return *this;
 }	//Done
