@@ -14,7 +14,7 @@ public:
 	string getCategory() const;
 	time_t getDate() const;
 	string getNote() const;
-	ostream &operator<<(ostream &out);
+	int getID() const;
 
 private:
 	float amount;
@@ -23,4 +23,7 @@ private:
 	string note;
 	int id;
 	
+friend ostream& operator<<(ostream& out, const Expense& right);
+
+
 };

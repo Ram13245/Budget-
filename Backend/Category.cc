@@ -1,14 +1,13 @@
 #include "Category.h"
 
-Category::Category(string name, float pct) : name(name), percentage(pct)
+Category::Category(string nm, float pct)
 {
 	//TODO
+	name = nm;
+	percentage = pct;
 }
 
-Category::~Category()
-{
-	//TODO
-}
+Category::~Category(){}//intentionally empty
 
 string Category::getName() const
 {
@@ -20,14 +19,22 @@ float Category::getPercentage() const
     return percentage;
 }
 
-void Category::changePercentage(float pct)
+void Category::changePercentage(float pct)//does this require changing other percentages as a result?
 {
 	//TODO
+	percentage = pct;
 }
 
-ostream& Category::operator<<(ostream& out) const
-{
-	//TODO
-    return out;
+void Category::changeName(string new_name){
+	name = new_name;
 }
 
+//ostream& Category::operator<<(ostream& out) const
+//{
+//	//TODO
+//    return out;
+//}
+ostream& operator<<(ostream& out, const Category& right) {
+	out << "Category: " << right.name << " percentage" << right.percentage << endl;
+	return out;
+}
