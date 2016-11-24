@@ -29,11 +29,6 @@ void Category::changeName(string new_name){
 	name = new_name;
 }
 
-//ostream& Category::operator<<(ostream& out) const
-//{
-//	//TODO
-//    return out;
-//}
 ostream& operator<<(ostream& out, const Category& right) {
 	out << "Category: " << right.name << " percentage" << right.percentage << endl;
 	return out;
