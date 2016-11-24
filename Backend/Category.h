@@ -14,11 +14,14 @@ public:
     string getName() const;
     float getPercentage() const;
     void changePercentage(float pct);
-    ostream& operator<<(ostream&) const;
+    void changeName(string new_name);
+//    ostream& operator<<(ostream&, const Category& right) const;
 
 private:
     string name;
     float percentage;
+
+friend ostream& operator<<(ostream& out, const Category& right);
 
 };
 
