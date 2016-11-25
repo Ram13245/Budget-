@@ -14,6 +14,7 @@ namespace BudgetPP {
 	/// </summary>
 	public ref class Settings : public System::Windows::Forms::Form
 	{
+		static int i = 2;
 	public:
 		Settings(void)
 		{
@@ -44,6 +45,35 @@ namespace BudgetPP {
 	private: System::Windows::Forms::Panel^  toolbar_panel;
 	private: System::Windows::Forms::Button^  close_button;
 
+	private: System::Windows::Forms::Label^  dollar;
+	private: System::Windows::Forms::TextBox^  dollar_text;
+	private: System::Windows::Forms::Button^  add_category;
+	private: System::Windows::Forms::TextBox^  percent_text;
+	private: System::Windows::Forms::TrackBar^  categoryBar;
+	private: System::Windows::Forms::TextBox^  category;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -63,7 +93,14 @@ namespace BudgetPP {
 			this->total_label = (gcnew System::Windows::Forms::Label());
 			this->toolbar_panel = (gcnew System::Windows::Forms::Panel());
 			this->close_button = (gcnew System::Windows::Forms::Button());
+			this->dollar = (gcnew System::Windows::Forms::Label());
+			this->dollar_text = (gcnew System::Windows::Forms::TextBox());
+			this->add_category = (gcnew System::Windows::Forms::Button());
+			this->percent_text = (gcnew System::Windows::Forms::TextBox());
+			this->categoryBar = (gcnew System::Windows::Forms::TrackBar());
+			this->category = (gcnew System::Windows::Forms::TextBox());
 			this->toolbar_panel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// ok_button
@@ -95,6 +132,7 @@ namespace BudgetPP {
 			this->total_text->Name = L"total_text";
 			this->total_text->Size = System::Drawing::Size(109, 19);
 			this->total_text->TabIndex = 1;
+			this->total_text->Text = L"0";
 			// 
 			// total_label
 			// 
@@ -136,16 +174,87 @@ namespace BudgetPP {
 			this->close_button->UseVisualStyleBackColor = true;
 			this->close_button->Click += gcnew System::EventHandler(this, &Settings::close_button_Click);
 			// 
+			// dollar
+			// 
+			this->dollar->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->dollar->AutoSize = true;
+			this->dollar->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dollar->Location = System::Drawing::Point(273, 186);
+			this->dollar->Name = L"dollar";
+			this->dollar->Size = System::Drawing::Size(19, 18);
+			this->dollar->TabIndex = 6;
+			this->dollar->Text = L"$";
+			// 
+			// dollar_text
+			// 
+			this->dollar_text->Location = System::Drawing::Point(300, 185);
+			this->dollar_text->Name = L"dollar_text";
+			this->dollar_text->Size = System::Drawing::Size(53, 20);
+			this->dollar_text->TabIndex = 5;
+			this->dollar_text->Text = L"0";
+			// 
+			// add_category
+			// 
+			this->add_category->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->add_category->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
+				static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			this->add_category->FlatAppearance->BorderSize = 0;
+			this->add_category->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->add_category->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->add_category->ForeColor = System::Drawing::Color::White;
+			this->add_category->Location = System::Drawing::Point(300, 85);
+			this->add_category->Name = L"add_category";
+			this->add_category->Size = System::Drawing::Size(46, 27);
+			this->add_category->TabIndex = 4;
+			this->add_category->Text = L"add";
+			this->add_category->UseVisualStyleBackColor = false;
+			this->add_category->Click += gcnew System::EventHandler(this, &Settings::add_category_Click);
+			// 
+			// percent_text
+			// 
+			this->percent_text->Location = System::Drawing::Point(300, 160);
+			this->percent_text->Name = L"percent_text";
+			this->percent_text->Size = System::Drawing::Size(53, 20);
+			this->percent_text->TabIndex = 3;
+			this->percent_text->Text = L"0";
+			// 
+			// categoryBar
+			// 
+			this->categoryBar->Location = System::Drawing::Point(130, 160);
+			this->categoryBar->Maximum = 100;
+			this->categoryBar->Name = L"categoryBar";
+			this->categoryBar->Size = System::Drawing::Size(164, 45);
+			this->categoryBar->TabIndex = 2;
+			this->categoryBar->TickStyle = System::Windows::Forms::TickStyle::None;
+			this->categoryBar->Scroll += gcnew System::EventHandler(this, &Settings::categoryBar_Scroll);
+			// 
+			// category
+			// 
+			this->category->Location = System::Drawing::Point(63, 160);
+			this->category->Name = L"category";
+			this->category->Size = System::Drawing::Size(61, 20);
+			this->category->TabIndex = 0;
+			this->category->Text = L"Category 1";
+			// 
 			// Settings
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(404, 461);
 			this->ControlBox = false;
+			this->Controls->Add(this->dollar);
 			this->Controls->Add(this->toolbar_panel);
+			this->Controls->Add(this->dollar_text);
 			this->Controls->Add(this->total_label);
+			this->Controls->Add(this->percent_text);
+			this->Controls->Add(this->add_category);
+			this->Controls->Add(this->categoryBar);
 			this->Controls->Add(this->total_text);
+			this->Controls->Add(this->category);
 			this->Controls->Add(this->ok_button);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Settings";
@@ -154,6 +263,7 @@ namespace BudgetPP {
 			this->Text = L"Settings";
 			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Settings::Settings_Paint);
 			this->toolbar_panel->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -181,6 +291,22 @@ namespace BudgetPP {
 	}
 	private: System::Void Settings_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 		e->Graphics->DrawRectangle(gcnew Pen(Color::Black, 3), this->DisplayRectangle);
+	}
+
+	private: System::Void categoryBar_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		percent_text->Text = System::Convert::ToString(categoryBar->Value);
+		int totalAmount = Int32::Parse(total_text->Text);
+		int percentAmount = categoryBar->Value;
+		dollar_text->Text = System::Convert::ToString((totalAmount*percentAmount)/100);
+	}
+	private: System::Void add_category_Click(System::Object^  sender, System::EventArgs^  e) {
+		TextBox^ tb = gcnew TextBox();
+		tb->Text = "Category" + i;
+		Point p = Point(category->Location.X + i, category->Location.Y * i);
+		tb->Location = p;
+		this->Controls->Add(tb);
+		i++;
+
 	}
 };
 }

@@ -1,2 +1,6 @@
-﻿  BudgetPP.vcxproj -> C:\Users\Jonah\Documents\Eniac\GUI\BudgetPP\Debug\BudgetPP.exe
-  BudgetPP.vcxproj -> C:\Users\Jonah\Documents\Eniac\GUI\BudgetPP\Debug\BudgetPP.pdb (Partial PDB)
+﻿  Dashboard.cpp
+  Login.cpp
+  Generating Code...
+  AddExpense.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  BudgetPP.vcxproj -> C:\Users\Kyle\documents\visual studio 2015\Projects\BudgetPP\Debug\BudgetPP.exe
+  BudgetPP.vcxproj -> C:\Users\Kyle\documents\visual studio 2015\Projects\BudgetPP\Debug\BudgetPP.pdb (Partial PDB)

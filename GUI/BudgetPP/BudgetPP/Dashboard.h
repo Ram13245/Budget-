@@ -246,18 +246,21 @@ namespace BudgetPP {
 			// 
 			// label1
 			// 
+			this->label1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 30));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Kelson Sans", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(36)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
 				static_cast<System::Int32>(static_cast<System::Byte>(172)));
 			this->label1->Location = System::Drawing::Point(455, 39);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(226, 48);
+			this->label1->Size = System::Drawing::Size(179, 48);
 			this->label1->TabIndex = 8;
 			this->label1->Text = L"budget++";
 			// 
 			// burn_chart_label
 			// 
+			this->burn_chart_label->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->burn_chart_label->AutoSize = true;
 			this->burn_chart_label->Font = (gcnew System::Drawing::Font(L"Verdana", 12));
 			this->burn_chart_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(36)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
@@ -270,6 +273,7 @@ namespace BudgetPP {
 			// 
 			// budget_chartDB_label
 			// 
+			this->budget_chartDB_label->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->budget_chartDB_label->AutoSize = true;
 			this->budget_chartDB_label->Font = (gcnew System::Drawing::Font(L"Verdana", 12));
 			this->budget_chartDB_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(36)),
@@ -282,6 +286,7 @@ namespace BudgetPP {
 			// 
 			// burn_chart
 			// 
+			this->burn_chart->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->burn_chart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			chartArea1->AxisX->LabelStyle->ForeColor = System::Drawing::Color::White;
@@ -303,6 +308,7 @@ namespace BudgetPP {
 			// 
 			// budget_chartDB
 			// 
+			this->budget_chartDB->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->budget_chartDB->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			chartArea2->Name = L"ChartArea1";
@@ -342,7 +348,7 @@ namespace BudgetPP {
 			this->you_label->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Bold));
 			this->you_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(36)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
 				static_cast<System::Int32>(static_cast<System::Byte>(172)));
-			this->you_label->Location = System::Drawing::Point(340, 497);
+			this->you_label->Location = System::Drawing::Point(339, 497);
 			this->you_label->Name = L"you_label";
 			this->you_label->Size = System::Drawing::Size(438, 14);
 			this->you_label->TabIndex = 8;
@@ -518,7 +524,7 @@ namespace BudgetPP {
 		if (mouseDown) {
 			mouseX = MousePosition.X;
 			mouseY = MousePosition.Y;
-			this->SetDesktopLocation(mouseX, mouseY);
+			this->SetDesktopLocation(mouseX - 676, mouseY - 20);
 		}
 	}
 	private: System::Void toolbar_panel_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
@@ -529,13 +535,9 @@ namespace BudgetPP {
 		this->WindowState = FormWindowState::Minimized;
 	}
 	private: System::Void max_button_Click(System::Object^  sender, System::EventArgs^  e) {
-		//this->MaximizedBounds = Screen::FromHandle(this->Handle)->WorkingArea;
-		//this->Left = -10;
-		//this->Top = 0;
-		//this->Width = Screen::PrimaryScreen->WorkingArea.Width + 20;
-		//this->Height = Screen::PrimaryScreen->WorkingArea.Height + 10;
 		if (this->WindowState == FormWindowState::Maximized) {
-			this->Width = 1000;
+			this->WindowState = FormWindowState::Normal;
+			this->Size = System::Drawing::Size(1152, 648);
 		}
 		else {
 			this->WindowState = FormWindowState::Maximized;
