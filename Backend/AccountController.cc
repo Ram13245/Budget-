@@ -1,7 +1,9 @@
 // Account Controller cpp file.
 #include "AccountController.h"
 
-AccountController::AccountController() : loggedIn(false), account(nullptr)
+Account* AccountController::account = nullptr;
+
+AccountController::AccountController() : loggedIn(false)
 {
 	//TODO
 }
@@ -12,10 +14,13 @@ void AccountController::attemptLogin(Error& err, const string& usr, const string
 	FileIOController* fioc = new FileIOController();
 	vector<Budget> dummy;
 	fioc->login(err, usr, pass, dummy);
-	if (err.getMessage()!="")
+	if (err.getMessage()!="") {
 		cout << err.getMessage() << endl;
-	else
-		cout << "Login Successful!\n" << endl;
+		return;
+	}
+
+	cout << "Login Successful!\n" << endl;
+	account = new Account(usr);
 }
 
 bool AccountController::getLoggedIn() const
@@ -64,7 +69,7 @@ vector<string> AccountController::getCategories() const
 	//TODO
 	//Check loggedIn flag first...?
 	vector<string> ret;
-	vector<Category> dummy = this->account->getPeriods().back().getCategories();
+	vector<Category> dummy = account->getPeriods().back().getCategories();
 	for (Category c : dummy){
 		ret.push_back(c.getName());
 	}

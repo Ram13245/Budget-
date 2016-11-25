@@ -6,15 +6,13 @@ ChartController::ChartController() { }
 
 void ChartController::getBudgetPie(Error& err, map<string, float>& data){
 	//Account user = somehow get current account;
-	Account* user = new Account("thisistemp");
+	Account* user = AccountController::getAccount();
 
-	//how to check errors?
-	/*try{
-	  	Budget budget = user.getPeriods()[0];
-	}catch (err){
-		err += "could not retrieve budget.";
-	}*/
 
+	if (user->getPeriods().size() == 0) {
+		err += "Empty period vector";
+		return;
+	}
 	Budget budget = user->getPeriods()[0];
 
 	vector<Category> cats = budget.getCategories();
