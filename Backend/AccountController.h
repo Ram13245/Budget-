@@ -21,7 +21,7 @@ public:
     void attemptLogout(Error& err);
     vector<string> getCategories() const;
 
-    static Account* getAccount() {
+    Account* getAccount() {
     	return account;
     }
 
