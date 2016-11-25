@@ -1,4 +1,5 @@
 #include "ChartController.h"
+#include <algorithm>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ void ChartController::getBudgetPie(Error& err, map<string, float>& data){
 		err += "Empty period vector";
 		return;
 	}
-	Budget budget = user->getPeriods()[0];
+	Budget budget = user->getPeriods().back();
 
 	vector<Category> cats = budget.getCategories();
 
@@ -24,8 +25,8 @@ void ChartController::getBudgetPie(Error& err, map<string, float>& data){
 }
 void ChartController::getBurndown(Error& err, vector<pair<time_t,float> >& exp){
 	//Account user = somehow get current account;
-	Account* user = new Account("thisistemp");
-	Budget budget = user->getPeriods()[0]; //current budget
+	Account* user = AccountController::getAccount();
+	Budget budget = user->getPeriods().back(); //current budget
 	vector<Category> cats = budget.getCategories();
 
 	vector<Expense> catExpenses;
@@ -38,10 +39,10 @@ void ChartController::getBurndown(Error& err, vector<pair<time_t,float> >& exp){
 		}
 	}
 
+	sort(exp.begin(),exp.end());
 	//sort exp by date
-
-
 }
+
 
 void ChartController::getHabitPie(Error& err, map<string, float>& data){
 	//TODO
