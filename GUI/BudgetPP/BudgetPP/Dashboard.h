@@ -70,6 +70,17 @@ namespace BudgetPP {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  burn_chart_label;
 	private: System::Windows::Forms::Label^  budget_chartDB_label;
+	private: System::Windows::Forms::DataGridView^  expenses;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Expense;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Amount;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Category;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Date;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Description;
+
+
+
+
+
 
 
 
@@ -95,16 +106,16 @@ namespace BudgetPP {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Dashboard::typeid));
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea5 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea6 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea7 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea8 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea9 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea10 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->toolbar_panel = (gcnew System::Windows::Forms::Panel());
 			this->settings_button = (gcnew System::Windows::Forms::Button());
 			this->max_button = (gcnew System::Windows::Forms::Button());
@@ -127,7 +138,13 @@ namespace BudgetPP {
 			this->budget_chartH = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->habits_chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->expense_tab = (gcnew System::Windows::Forms::TabPage());
+			this->expenses = (gcnew System::Windows::Forms::DataGridView());
 			this->add_expense_button = (gcnew System::Windows::Forms::Button());
+			this->Expense = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Amount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Category = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Date = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Description = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->toolbar_panel->SuspendLayout();
 			this->main_tabs->SuspendLayout();
 			this->dashboard_tab->SuspendLayout();
@@ -138,6 +155,7 @@ namespace BudgetPP {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->budget_chartH))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->habits_chart))->BeginInit();
 			this->expense_tab->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->expenses))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// toolbar_panel
@@ -248,13 +266,13 @@ namespace BudgetPP {
 			// 
 			this->label1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Kelson Sans", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(36)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
 				static_cast<System::Int32>(static_cast<System::Byte>(172)));
 			this->label1->Location = System::Drawing::Point(455, 39);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(179, 48);
+			this->label1->Size = System::Drawing::Size(187, 46);
 			this->label1->TabIndex = 8;
 			this->label1->Text = L"budget++";
 			// 
@@ -289,19 +307,19 @@ namespace BudgetPP {
 			this->burn_chart->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->burn_chart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			chartArea1->AxisX->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea1->AxisX2->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea1->AxisY->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea1->AxisY2->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea1->Name = L"ChartArea1";
-			this->burn_chart->ChartAreas->Add(chartArea1);
+			chartArea6->AxisX->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea6->AxisX2->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea6->AxisY->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea6->AxisY2->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea6->Name = L"ChartArea1";
+			this->burn_chart->ChartAreas->Add(chartArea6);
 			this->burn_chart->Location = System::Drawing::Point(601, 128);
 			this->burn_chart->Name = L"burn_chart";
 			this->burn_chart->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::EarthTones;
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series1->Name = L"burnSeries";
-			this->burn_chart->Series->Add(series1);
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series6->Name = L"burnSeries";
+			this->burn_chart->Series->Add(series6);
 			this->burn_chart->Size = System::Drawing::Size(300, 300);
 			this->burn_chart->TabIndex = 1;
 			this->burn_chart->Text = L"chart2";
@@ -311,15 +329,15 @@ namespace BudgetPP {
 			this->budget_chartDB->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->budget_chartDB->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			chartArea2->Name = L"ChartArea1";
-			this->budget_chartDB->ChartAreas->Add(chartArea2);
+			chartArea7->Name = L"ChartArea1";
+			this->budget_chartDB->ChartAreas->Add(chartArea7);
 			this->budget_chartDB->Location = System::Drawing::Point(204, 128);
 			this->budget_chartDB->Name = L"budget_chartDB";
 			this->budget_chartDB->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SeaGreen;
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series2->Name = L"budgetSeries";
-			this->budget_chartDB->Series->Add(series2);
+			series7->ChartArea = L"ChartArea1";
+			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series7->Name = L"budgetSeries";
+			this->budget_chartDB->Series->Add(series7);
 			this->budget_chartDB->Size = System::Drawing::Size(300, 300);
 			this->budget_chartDB->TabIndex = 0;
 			this->budget_chartDB->Text = L"chart1";
@@ -407,17 +425,17 @@ namespace BudgetPP {
 			// 
 			this->bar_chart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			chartArea3->AxisX->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea3->AxisX2->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea3->AxisY->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea3->AxisY2->LabelStyle->ForeColor = System::Drawing::Color::White;
-			chartArea3->Name = L"ChartArea1";
-			this->bar_chart->ChartAreas->Add(chartArea3);
+			chartArea8->AxisX->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea8->AxisX2->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea8->AxisY->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea8->AxisY2->LabelStyle->ForeColor = System::Drawing::Color::White;
+			chartArea8->Name = L"ChartArea1";
+			this->bar_chart->ChartAreas->Add(chartArea8);
 			this->bar_chart->Location = System::Drawing::Point(733, 121);
 			this->bar_chart->Name = L"bar_chart";
-			series3->ChartArea = L"ChartArea1";
-			series3->Name = L"barSeries";
-			this->bar_chart->Series->Add(series3);
+			series8->ChartArea = L"ChartArea1";
+			series8->Name = L"barSeries";
+			this->bar_chart->Series->Add(series8);
 			this->bar_chart->Size = System::Drawing::Size(300, 300);
 			this->bar_chart->TabIndex = 3;
 			this->bar_chart->Text = L"chart1";
@@ -426,15 +444,15 @@ namespace BudgetPP {
 			// 
 			this->budget_chartH->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			chartArea4->Name = L"ChartArea1";
-			this->budget_chartH->ChartAreas->Add(chartArea4);
+			chartArea9->Name = L"ChartArea1";
+			this->budget_chartH->ChartAreas->Add(chartArea9);
 			this->budget_chartH->Location = System::Drawing::Point(407, 121);
 			this->budget_chartH->Name = L"budget_chartH";
 			this->budget_chartH->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SeaGreen;
-			series4->ChartArea = L"ChartArea1";
-			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series4->Name = L"budgetSeries";
-			this->budget_chartH->Series->Add(series4);
+			series9->ChartArea = L"ChartArea1";
+			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series9->Name = L"budgetSeries";
+			this->budget_chartH->Series->Add(series9);
 			this->budget_chartH->Size = System::Drawing::Size(300, 300);
 			this->budget_chartH->TabIndex = 2;
 			this->budget_chartH->Text = L"chart1";
@@ -443,22 +461,24 @@ namespace BudgetPP {
 			// 
 			this->habits_chart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			chartArea5->Name = L"ChartArea1";
-			this->habits_chart->ChartAreas->Add(chartArea5);
+			chartArea10->Name = L"ChartArea1";
+			this->habits_chart->ChartAreas->Add(chartArea10);
 			this->habits_chart->Location = System::Drawing::Point(79, 121);
 			this->habits_chart->Name = L"habits_chart";
 			this->habits_chart->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::EarthTones;
-			series5->ChartArea = L"ChartArea1";
-			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series5->Name = L"habitSeries";
-			this->habits_chart->Series->Add(series5);
+			series10->ChartArea = L"ChartArea1";
+			series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series10->Name = L"habitSeries";
+			this->habits_chart->Series->Add(series10);
 			this->habits_chart->Size = System::Drawing::Size(300, 300);
 			this->habits_chart->TabIndex = 1;
 			this->habits_chart->Text = L"chart1";
 			// 
 			// expense_tab
 			// 
-			this->expense_tab->BackColor = System::Drawing::Color::White;
+			this->expense_tab->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(54)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->expense_tab->Controls->Add(this->expenses);
 			this->expense_tab->Controls->Add(this->add_expense_button);
 			this->expense_tab->Location = System::Drawing::Point(4, 22);
 			this->expense_tab->Name = L"expense_tab";
@@ -466,6 +486,29 @@ namespace BudgetPP {
 			this->expense_tab->Size = System::Drawing::Size(1128, 580);
 			this->expense_tab->TabIndex = 2;
 			this->expense_tab->Text = L"expenses";
+			// 
+			// expenses
+			// 
+			this->expenses->AllowUserToAddRows = false;
+			this->expenses->AllowUserToDeleteRows = false;
+			this->expenses->AllowUserToResizeColumns = false;
+			this->expenses->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->expenses->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::ColumnHeader;
+			this->expenses->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(12)), static_cast<System::Int32>(static_cast<System::Byte>(12)),
+				static_cast<System::Int32>(static_cast<System::Byte>(12)));
+			this->expenses->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->expenses->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Expense, this->Amount,
+					this->Category, this->Date, this->Description
+			});
+			this->expenses->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(12)), static_cast<System::Int32>(static_cast<System::Byte>(12)),
+				static_cast<System::Int32>(static_cast<System::Byte>(12)));
+			this->expenses->Location = System::Drawing::Point(76, 174);
+			this->expenses->Name = L"expenses";
+			this->expenses->RowHeadersVisible = false;
+			this->expenses->RowHeadersWidth = 80;
+			this->expenses->Size = System::Drawing::Size(941, 179);
+			this->expenses->TabIndex = 2;
 			// 
 			// add_expense_button
 			// 
@@ -484,6 +527,46 @@ namespace BudgetPP {
 			this->add_expense_button->Text = L"add";
 			this->add_expense_button->UseVisualStyleBackColor = false;
 			this->add_expense_button->Click += gcnew System::EventHandler(this, &Dashboard::add_expense_button_Click);
+			// 
+			// Expense
+			// 
+			this->Expense->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->Expense->HeaderText = L"Expense";
+			this->Expense->Name = L"Expense";
+			this->Expense->ReadOnly = true;
+			this->Expense->Width = 87;
+			// 
+			// Amount
+			// 
+			this->Amount->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->Amount->HeaderText = L"Amount";
+			this->Amount->Name = L"Amount";
+			this->Amount->ReadOnly = true;
+			this->Amount->Width = 82;
+			// 
+			// Category
+			// 
+			this->Category->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->Category->HeaderText = L"Category";
+			this->Category->Name = L"Category";
+			this->Category->ReadOnly = true;
+			this->Category->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Category->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			this->Category->Width = 72;
+			// 
+			// Date
+			// 
+			this->Date->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->Date->HeaderText = L"Date";
+			this->Date->Name = L"Date";
+			this->Date->ReadOnly = true;
+			this->Date->Width = 62;
+			// 
+			// Description
+			// 
+			this->Description->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Description->HeaderText = L"Description";
+			this->Description->Name = L"Description";
 			// 
 			// Dashboard
 			// 
@@ -513,6 +596,7 @@ namespace BudgetPP {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->budget_chartH))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->habits_chart))->EndInit();
 			this->expense_tab->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->expenses))->EndInit();
 			this->ResumeLayout(false);
 
 		}
