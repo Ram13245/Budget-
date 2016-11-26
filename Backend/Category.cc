@@ -2,9 +2,18 @@
 
 Category::Category(string nm, float pct)
 {
-	//TODO
-	name = nm;//make sure it's 3-15 characters
-	percentage = pct;//0-100
+	if(nm.length() < 3 || nm.length() > 15){
+		cout<<"invalid category name!" << endl;
+	}
+	else{
+		name = nm;//make sure it's 3-15 characters
+	}
+	if(pct < 0.0 || pct > 1.0){
+		cout<<"invalid category percentage!" << endl;
+	}
+	else{
+		percentage = pct;//0-100
+	}
 }
 
 Category::~Category(){}//intentionally empty
@@ -21,7 +30,6 @@ float Category::getPercentage() const
 
 void Category::changePercentage(float pct)//does this require changing other percentages as a result?
 {
-	//TODO
 	percentage = pct;
 }
 

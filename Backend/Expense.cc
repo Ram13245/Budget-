@@ -1,10 +1,22 @@
 #include "Expense.h"
 
 Expense::Expense(const float& amt, const string& cat, const time_t d, const string& n){
-	amount = amt;//cap at 10k, can't be negative
-	category = cat;//no numbers, no symbols, 3-15 characters
-	date = d;//make sure it's today's date, or before
-	note = n;//max 50 characters
+	if(amt > 10000 || amt < 0)
+		cout << "invalid expense amount!" << endl;
+	else
+		amount = amt;//cap at 10k, can't be negative
+	if(cat.length() < 3 || cat.length() > 15)//add check for non numeric or symbol
+		cout << "invalid category name!" << endl;
+	else
+		category = cat;//no numbers, no symbols, 3-15 characters
+	if(difftime(d, time(0)) > 0)
+		cout << "invalid date!" << endl;
+	else
+		date = d;//make sure it's today's date, or before
+	if(n.length() > 50)
+		cout << "invalid note!" << endl;
+	else
+		note = n;//max 50 characters
 	static int temp_id = 0;
 	id = temp_id;
 	temp_id++;
@@ -17,7 +29,7 @@ string Expense::getNote() const{ return note; }
 int Expense::getID() const{ return id; }
 
 ostream& operator<<(ostream& out, const Expense& right) {
-	out << "amount: " << right.amount << " category:" << right.category << " date: " << right.date << " note: " << right.note << " id: " << right.id;
+	out << "amount: " << right.amount << " category:" << right.category << " date: " << ctime(&right.date) << " note: " << right.note << " id: " << right.id;
 	return out;
 }
 

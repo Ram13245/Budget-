@@ -21,9 +21,16 @@ Budget::Budget(float amt, const time_t& sDate, const time_t& eDate, vector<Categ
 	for(int i = 0; i < cats.size(); i++)
 		categories->insert(pair<string, Category>(cats[i].getName(),cats[i]));
 	expenses = new map<string, vector<Expense>>();
-	totalAmount = amt;
-	startDate = sDate;
-	endDate = eDate;
+	if(amt < 0 || amt > 10000)
+		cout << "invalid amount" << endl;
+	else
+		totalAmount = amt;
+	if(sDate >= eDate)
+		cout << "start date must be before end date" << endl;
+	else{
+		startDate = sDate;
+		endDate = eDate;
+	}
 }
 
 Budget::~Budget() {
