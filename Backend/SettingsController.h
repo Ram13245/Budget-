@@ -2,15 +2,16 @@
 #pragma once
 
 #include <string>
-#include "Account.h"
+#include "AccountController.h"
 #include "Error.h"
 
 using namespace std;
 
 class SettingsController{
 public:
-	SettingsController();
-	void addCategory(string name, double perc);
-	void changeCategory(string name, double perc);
-	void removeCategory(string name);
+	void changeCategoryWeights(Error&, const map<string,float>&);
+	void changeCategoryName(Error&, string, string);
+	void addCategory(Error&, string);
+	void removeCategory(Error&, string);
+	void changeTotalAmount(Error&, const float&);
 };
