@@ -1,10 +1,10 @@
 #include "Expense.h"
 
 Expense::Expense(const float& amt, const string& cat, const time_t d, const string& n){
-	amount = amt;
-	category = cat;
-	date = d;
-	note = n;
+	amount = amt;//cap at 10k, can't be negative
+	category = cat;//no numbers, no symbols, 3-15 characters
+	date = d;//make sure it's today's date, or before
+	note = n;//max 50 characters
 	static int temp_id = 0;
 	id = temp_id;
 	temp_id++;

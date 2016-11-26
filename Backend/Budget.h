@@ -32,11 +32,4 @@ private:
 	time_t endDate;
 	map<string, Category>* categories;//heap
 	map<string, vector<Expense> >* expenses;//heap
-	map<int, int>* id_map;//map<int index, int id> //always empty until getCategories is called, holds the mapping between getExpenses vector and the expense ids
 };
-
-
-
-
-
-

@@ -3,8 +3,8 @@
 Category::Category(string nm, float pct)
 {
 	//TODO
-	name = nm;
-	percentage = pct;
+	name = nm;//make sure it's 3-15 characters
+	percentage = pct;//0-100
 }
 
 Category::~Category(){}//intentionally empty
