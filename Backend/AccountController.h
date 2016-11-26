@@ -21,9 +21,7 @@ public:
     void attemptLogout(Error& err);
     vector<string> getCategories() const;
 
-    Account* getAccount() {
-    	return account;
-    }
+    static Account* getAccount();
 
 private:
     bool loggedIn;    // state flag

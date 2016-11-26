@@ -64,3 +64,7 @@ vector<string> AccountController::getCategories() const
 	return ret;
 }
 
+Account* AccountController::getAccount()
+{
+	return account;
+}
