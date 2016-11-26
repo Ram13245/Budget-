@@ -29,7 +29,7 @@ Budget::Budget(float amt, const time_t& sDate, const time_t& eDate, vector<Categ
 		cout << "start date must be before end date" << endl;
 	else{
 		startDate = sDate;
-		endDate = eDate;
+		endDate = eDate;//thsi si aslkjfd
 	}
 }
 
