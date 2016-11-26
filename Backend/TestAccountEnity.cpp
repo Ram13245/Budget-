@@ -18,7 +18,7 @@ int main(){
 	cout << "Test4" << endl;
 	// Account* test4 = new Account(1234);
 	Account* test4 = new Account("Eniac$");
-	string input = "Eniac"
+	string input = "Eniac";
 	Account* test5 = new Account(input);
 	if(test5->getUsername() == input)
 		cout << "Correct Accessor" << endl;
