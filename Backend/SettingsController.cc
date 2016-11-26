@@ -5,19 +5,36 @@
 
 using namespace std;
 
-SettingsController::SettingsController()
-{
-	//TODO
+void SettingsController::changeCategoryWeights(Error& err, const map<string,float>& newCatWeight){
+	Account* currentAccount = AccountController::getAccount();
+	vector<Budget> budgets = currentAccount->getPeriods();
+	Budget currentBudget = budgets.back(); //Back gets last budget(current)
+	vector<Category> currentCats = currentBudget.getCategories();
+	for(Category cCat : currentCats) {
+		float newVal = newCatWeight.at(cCat.getName());
+		cCat.changePercentage(newVal);
+	}
 }
 
-void SettingsController::addCategory(string name, double perc){
-	//TODO
+void SettingsController::changeCategoryName(Error&, string originalName, string newName){
+	Account* currentAccount = AccountController::getAccount();
+	vector<Budget> budgets = currentAccount->getPeriods();
+	Budget currentBudget = budgets.back(); //Back gets last budget(current)
+	vector<Category> currentCats = currentBudget.getCategories();
+	for(Category cCat : currentCats) {
+		if(cCat.getName() == originalName){
+			cCat.changeName(newName);
+		}
+	}
+}
+void SettingsController::addCategory(Error&, string name){
+	//Category::Category(name,0.0);
 }
 
-void SettingsController::changeCategory(string name, double perc){
-	//TODO
+void SettingsController::removeCategory(Error&, string){
+
 }
 
-void SettingsController::removeCategory(string name){
-	//TODO
+void SettingsController::changeTotalAmount(Error&, const float& newAmount){
+
 }
