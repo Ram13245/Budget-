@@ -10,6 +10,7 @@ class Expense
 {
 public:
 	Expense(const float& amt, const string& cat, const time_t d, const string& note = "");
+	~Expense();
 	float getAmount() const;
 	string getCategory() const;
 	time_t getDate() const;
@@ -23,6 +24,6 @@ private:
 	string note;
 	int id;
 	
-friend bool operator<(const int& left, const Expense& right);
+friend bool operator<(const Expense& left, const Expense& right);
 friend ostream& operator<<(ostream& out, const Expense& right);
 };

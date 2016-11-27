@@ -22,6 +22,7 @@ Expense::Expense(const float& amt, const string& cat, const time_t d, const stri
 	temp_id++;
 }
 
+Expense::~Expense(){}
 float Expense::getAmount() const{ return amount; }
 string Expense::getCategory() const{ return category; }
 time_t Expense::getDate() const{ return date; }
@@ -33,6 +34,6 @@ ostream& operator<<(ostream& out, const Expense& right) {
 	return out;
 }
 
-bool operator<(const int& left, const Expense& right){
-	return (float(left) < right.getAmount());
+bool operator<(const Expense& left, const Expense& right){
+	return (left.getAmount() < right.getAmount());
 }
