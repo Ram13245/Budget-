@@ -45,7 +45,7 @@ void SettingsController::removeCategory(Error&, string removeName){
 	for(Category cCat : currentCats) {
 		if(cCat.getName() == removeName){
 			//May need to make a change
-			currentCats.erase(remove(currentCats.begin(),currentCats.end(), cCat),currentCats.end());
+			//currentCats.erase(remove(currentCats.begin(),currentCats.end(), cCat),currentCats.end());
 		}
 	}
 }
