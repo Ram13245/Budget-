@@ -18,6 +18,23 @@ Account::Account(string usr) {
 	}
 }
 
+Account::Account(string usr, vector<Budget>* budgets){
+	string inputs = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";
+		this->period = budgets;
+		if(usr.length() < 3 || usr.length() > 15)
+			cout << "Username length must be between 3 and 15 characters!" << endl;
+		else{
+		for (char& a : usr){
+			if(inputs.find(a) != std::string::npos){
+				this->username = usr;
+			}
+			else
+				cout << "Username can only contain letters and numbers" << endl;
+			break;
+			}
+		}
+}
+
 string Account::getUsername() const{
 	return this->username;
 }

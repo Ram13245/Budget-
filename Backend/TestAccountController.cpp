@@ -28,7 +28,7 @@
 //
 //	cout << "Test create a legal account." << endl;
 //	Error e;
-//	//acntCon->createAccount(e, "Eniac", "thispassword", "thispassword");
+////	acntCon->createAccount(e, "Eniac", "thispassword", "thispassword");
 //
 //	cout << "\nTest attempt log in." << endl;
 //	Error a;
@@ -37,7 +37,7 @@
 //	cout << "\nTest accessor." << endl;
 //	cout << "Should be true: " << acntCon->getLoggedIn() << endl;
 //	cout << "Should be Eniac: " << acntCon->getAccount()->getUsername() << endl;
-////	cout << "Should be 0: " << acntCon->getCategories().size() << endl;
+//	cout << "Should be 0: " << acntCon->getCategories().size() << endl;
 //
 //	cout << "\nTest attempt logout." << endl;
 //	Error b;

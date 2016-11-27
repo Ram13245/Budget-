@@ -12,14 +12,14 @@ void AccountController::attemptLogin(Error& err, const string& usr,
 		const string& pass) {
 	//TODO
 	FileIOController fioc;
-	vector<Budget> dummy;
-	fioc.login(err, usr, pass, dummy);
+	vector<Budget> passedBudget;
+	fioc.login(err, usr, pass, passedBudget);
 	if (err.getMessage() != "") {
 		cout << err.getMessage() << endl;
 		return;
 	} else {
 		cout << "Login Successful!\n" << endl;
-		account = new Account(usr);
+		account = new Account(usr, passedBudget);
 	}
 }
 

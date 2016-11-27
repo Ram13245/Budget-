@@ -16,7 +16,7 @@
 //	cout << test1->getUsername() << endl;
 //
 //	cout << "\nTest username too long." << endl;
-//	Account* test2 = new aAccount("123456789123456789");
+//	Account* test2 = new Account("123456789123456789");
 //
 //	cout << "\nTest username too short." << endl;
 //	Account* test3 = new Account("1");
