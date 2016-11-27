@@ -38,40 +38,35 @@ namespace BudgetPP {
 	private: System::Windows::Forms::Button^  ok_button;
 	private: System::Windows::Forms::TextBox^  total_text;
 	private: bool mouseDown;
-	private: int mouseX = 0, mouseY = 0;
+	private: int mouseX = 0, mouseY = 0, count = 4;
 	protected:
 
 	private: System::Windows::Forms::Label^  total_label;
 	private: System::Windows::Forms::Panel^  toolbar_panel;
 	private: System::Windows::Forms::Button^  close_button;
+	private: System::Windows::Forms::Label^  dollar1;
 
-	private: System::Windows::Forms::Label^  dollar;
-	private: System::Windows::Forms::TextBox^  dollar_text;
+
+	private: System::Windows::Forms::TextBox^  dollar_text1;
+
 	private: System::Windows::Forms::Button^  add_category;
-	private: System::Windows::Forms::TextBox^  percent_text;
-	private: System::Windows::Forms::TrackBar^  categoryBar;
-	private: System::Windows::Forms::TextBox^  category;
+	private: System::Windows::Forms::TextBox^  percent_text1;
 
+	private: System::Windows::Forms::TrackBar^  categoryBar1;
 
+	private: System::Windows::Forms::TextBox^  category1;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Panel^  category_panel;
+	private: System::Windows::Forms::TextBox^  category3;
+	private: System::Windows::Forms::Label^  dollar3;
+	private: System::Windows::Forms::TrackBar^  categoryBar3;
+	private: System::Windows::Forms::TextBox^  percent_text3;
+	private: System::Windows::Forms::TextBox^  dollar_text3;
+	private: System::Windows::Forms::TextBox^  category2;
+	private: System::Windows::Forms::Label^  dollar2;
+	private: System::Windows::Forms::TrackBar^  categoryBar2;
+	private: System::Windows::Forms::TextBox^  percent_text2;
+	private: System::Windows::Forms::TextBox^  dollar_text2;
 
 
 	private:
@@ -93,14 +88,28 @@ namespace BudgetPP {
 			this->total_label = (gcnew System::Windows::Forms::Label());
 			this->toolbar_panel = (gcnew System::Windows::Forms::Panel());
 			this->close_button = (gcnew System::Windows::Forms::Button());
-			this->dollar = (gcnew System::Windows::Forms::Label());
-			this->dollar_text = (gcnew System::Windows::Forms::TextBox());
+			this->dollar1 = (gcnew System::Windows::Forms::Label());
+			this->dollar_text1 = (gcnew System::Windows::Forms::TextBox());
 			this->add_category = (gcnew System::Windows::Forms::Button());
-			this->percent_text = (gcnew System::Windows::Forms::TextBox());
-			this->categoryBar = (gcnew System::Windows::Forms::TrackBar());
-			this->category = (gcnew System::Windows::Forms::TextBox());
+			this->percent_text1 = (gcnew System::Windows::Forms::TextBox());
+			this->categoryBar1 = (gcnew System::Windows::Forms::TrackBar());
+			this->category1 = (gcnew System::Windows::Forms::TextBox());
+			this->category_panel = (gcnew System::Windows::Forms::Panel());
+			this->category3 = (gcnew System::Windows::Forms::TextBox());
+			this->dollar3 = (gcnew System::Windows::Forms::Label());
+			this->categoryBar3 = (gcnew System::Windows::Forms::TrackBar());
+			this->percent_text3 = (gcnew System::Windows::Forms::TextBox());
+			this->dollar_text3 = (gcnew System::Windows::Forms::TextBox());
+			this->category2 = (gcnew System::Windows::Forms::TextBox());
+			this->dollar2 = (gcnew System::Windows::Forms::Label());
+			this->categoryBar2 = (gcnew System::Windows::Forms::TrackBar());
+			this->percent_text2 = (gcnew System::Windows::Forms::TextBox());
+			this->dollar_text2 = (gcnew System::Windows::Forms::TextBox());
 			this->toolbar_panel->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar1))->BeginInit();
+			this->category_panel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// ok_button
@@ -113,7 +122,7 @@ namespace BudgetPP {
 			this->ok_button->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ok_button->ForeColor = System::Drawing::Color::White;
-			this->ok_button->Location = System::Drawing::Point(150, 374);
+			this->ok_button->Location = System::Drawing::Point(162, 399);
 			this->ok_button->Name = L"ok_button";
 			this->ok_button->Size = System::Drawing::Size(81, 39);
 			this->ok_button->TabIndex = 0;
@@ -174,25 +183,25 @@ namespace BudgetPP {
 			this->close_button->UseVisualStyleBackColor = true;
 			this->close_button->Click += gcnew System::EventHandler(this, &Settings::close_button_Click);
 			// 
-			// dollar
+			// dollar1
 			// 
-			this->dollar->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->dollar->AutoSize = true;
-			this->dollar->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->dollar1->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->dollar1->AutoSize = true;
+			this->dollar1->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dollar->Location = System::Drawing::Point(273, 186);
-			this->dollar->Name = L"dollar";
-			this->dollar->Size = System::Drawing::Size(19, 18);
-			this->dollar->TabIndex = 6;
-			this->dollar->Text = L"$";
+			this->dollar1->Location = System::Drawing::Point(255, 61);
+			this->dollar1->Name = L"dollar1";
+			this->dollar1->Size = System::Drawing::Size(19, 18);
+			this->dollar1->TabIndex = 6;
+			this->dollar1->Text = L"$";
 			// 
-			// dollar_text
+			// dollar_text1
 			// 
-			this->dollar_text->Location = System::Drawing::Point(300, 185);
-			this->dollar_text->Name = L"dollar_text";
-			this->dollar_text->Size = System::Drawing::Size(53, 20);
-			this->dollar_text->TabIndex = 5;
-			this->dollar_text->Text = L"0";
+			this->dollar_text1->Location = System::Drawing::Point(274, 59);
+			this->dollar_text1->Name = L"dollar_text1";
+			this->dollar_text1->Size = System::Drawing::Size(53, 20);
+			this->dollar_text1->TabIndex = 5;
+			this->dollar_text1->Text = L"0";
 			// 
 			// add_category
 			// 
@@ -212,31 +221,146 @@ namespace BudgetPP {
 			this->add_category->UseVisualStyleBackColor = false;
 			this->add_category->Click += gcnew System::EventHandler(this, &Settings::add_category_Click);
 			// 
-			// percent_text
+			// percent_text1
 			// 
-			this->percent_text->Location = System::Drawing::Point(300, 160);
-			this->percent_text->Name = L"percent_text";
-			this->percent_text->Size = System::Drawing::Size(53, 20);
-			this->percent_text->TabIndex = 3;
-			this->percent_text->Text = L"0";
+			this->percent_text1->Location = System::Drawing::Point(274, 34);
+			this->percent_text1->Name = L"percent_text1";
+			this->percent_text1->Size = System::Drawing::Size(53, 20);
+			this->percent_text1->TabIndex = 3;
+			this->percent_text1->Text = L"0";
 			// 
-			// categoryBar
+			// categoryBar1
 			// 
-			this->categoryBar->Location = System::Drawing::Point(130, 160);
-			this->categoryBar->Maximum = 100;
-			this->categoryBar->Name = L"categoryBar";
-			this->categoryBar->Size = System::Drawing::Size(164, 45);
-			this->categoryBar->TabIndex = 2;
-			this->categoryBar->TickStyle = System::Windows::Forms::TickStyle::None;
-			this->categoryBar->Scroll += gcnew System::EventHandler(this, &Settings::categoryBar_Scroll);
+			this->categoryBar1->Location = System::Drawing::Point(104, 34);
+			this->categoryBar1->Maximum = 100;
+			this->categoryBar1->Name = L"categoryBar1";
+			this->categoryBar1->Size = System::Drawing::Size(164, 45);
+			this->categoryBar1->TabIndex = 2;
+			this->categoryBar1->TickStyle = System::Windows::Forms::TickStyle::None;
+			this->categoryBar1->Scroll += gcnew System::EventHandler(this, &Settings::categoryBar1_Scroll);
 			// 
-			// category
+			// category1
 			// 
-			this->category->Location = System::Drawing::Point(63, 160);
-			this->category->Name = L"category";
-			this->category->Size = System::Drawing::Size(61, 20);
-			this->category->TabIndex = 0;
-			this->category->Text = L"Category 1";
+			this->category1->Location = System::Drawing::Point(37, 34);
+			this->category1->Name = L"category1";
+			this->category1->Size = System::Drawing::Size(61, 20);
+			this->category1->TabIndex = 0;
+			this->category1->Text = L"Category 1";
+			// 
+			// category_panel
+			// 
+			this->category_panel->AutoScroll = true;
+			this->category_panel->Controls->Add(this->category3);
+			this->category_panel->Controls->Add(this->dollar3);
+			this->category_panel->Controls->Add(this->categoryBar3);
+			this->category_panel->Controls->Add(this->percent_text3);
+			this->category_panel->Controls->Add(this->dollar_text3);
+			this->category_panel->Controls->Add(this->category2);
+			this->category_panel->Controls->Add(this->dollar2);
+			this->category_panel->Controls->Add(this->categoryBar2);
+			this->category_panel->Controls->Add(this->percent_text2);
+			this->category_panel->Controls->Add(this->dollar_text2);
+			this->category_panel->Controls->Add(this->category1);
+			this->category_panel->Controls->Add(this->dollar1);
+			this->category_panel->Controls->Add(this->categoryBar1);
+			this->category_panel->Controls->Add(this->percent_text1);
+			this->category_panel->Controls->Add(this->dollar_text1);
+			this->category_panel->Location = System::Drawing::Point(12, 132);
+			this->category_panel->Name = L"category_panel";
+			this->category_panel->Size = System::Drawing::Size(380, 251);
+			this->category_panel->TabIndex = 11;
+			// 
+			// category3
+			// 
+			this->category3->Location = System::Drawing::Point(37, 173);
+			this->category3->Name = L"category3";
+			this->category3->Size = System::Drawing::Size(61, 20);
+			this->category3->TabIndex = 12;
+			this->category3->Text = L"Category 3";
+			// 
+			// dollar3
+			// 
+			this->dollar3->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->dollar3->AutoSize = true;
+			this->dollar3->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dollar3->Location = System::Drawing::Point(255, 200);
+			this->dollar3->Name = L"dollar3";
+			this->dollar3->Size = System::Drawing::Size(19, 18);
+			this->dollar3->TabIndex = 16;
+			this->dollar3->Text = L"$";
+			// 
+			// categoryBar3
+			// 
+			this->categoryBar3->Location = System::Drawing::Point(104, 173);
+			this->categoryBar3->Maximum = 100;
+			this->categoryBar3->Name = L"categoryBar3";
+			this->categoryBar3->Size = System::Drawing::Size(164, 45);
+			this->categoryBar3->TabIndex = 13;
+			this->categoryBar3->TickStyle = System::Windows::Forms::TickStyle::None;
+			this->categoryBar3->Scroll += gcnew System::EventHandler(this, &Settings::categoryBar3_Scroll);
+			// 
+			// percent_text3
+			// 
+			this->percent_text3->Location = System::Drawing::Point(274, 173);
+			this->percent_text3->Name = L"percent_text3";
+			this->percent_text3->Size = System::Drawing::Size(53, 20);
+			this->percent_text3->TabIndex = 14;
+			this->percent_text3->Text = L"0";
+			// 
+			// dollar_text3
+			// 
+			this->dollar_text3->Location = System::Drawing::Point(274, 198);
+			this->dollar_text3->Name = L"dollar_text3";
+			this->dollar_text3->Size = System::Drawing::Size(53, 20);
+			this->dollar_text3->TabIndex = 15;
+			this->dollar_text3->Text = L"0";
+			// 
+			// category2
+			// 
+			this->category2->Location = System::Drawing::Point(37, 104);
+			this->category2->Name = L"category2";
+			this->category2->Size = System::Drawing::Size(61, 20);
+			this->category2->TabIndex = 7;
+			this->category2->Text = L"Category 2";
+			// 
+			// dollar2
+			// 
+			this->dollar2->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->dollar2->AutoSize = true;
+			this->dollar2->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dollar2->Location = System::Drawing::Point(255, 131);
+			this->dollar2->Name = L"dollar2";
+			this->dollar2->Size = System::Drawing::Size(19, 18);
+			this->dollar2->TabIndex = 11;
+			this->dollar2->Text = L"$";
+			// 
+			// categoryBar2
+			// 
+			this->categoryBar2->Location = System::Drawing::Point(104, 104);
+			this->categoryBar2->Maximum = 100;
+			this->categoryBar2->Name = L"categoryBar2";
+			this->categoryBar2->Size = System::Drawing::Size(164, 45);
+			this->categoryBar2->TabIndex = 8;
+			this->categoryBar2->TickStyle = System::Windows::Forms::TickStyle::None;
+			this->categoryBar2->Scroll += gcnew System::EventHandler(this, &Settings::categoryBar2_Scroll);
+			// 
+			// percent_text2
+			// 
+			this->percent_text2->Location = System::Drawing::Point(274, 104);
+			this->percent_text2->Name = L"percent_text2";
+			this->percent_text2->Size = System::Drawing::Size(53, 20);
+			this->percent_text2->TabIndex = 9;
+			this->percent_text2->Text = L"0";
+			// 
+			// dollar_text2
+			// 
+			this->dollar_text2->Location = System::Drawing::Point(274, 129);
+			this->dollar_text2->Name = L"dollar_text2";
+			this->dollar_text2->Size = System::Drawing::Size(53, 20);
+			this->dollar_text2->TabIndex = 10;
+			this->dollar_text2->Text = L"0";
 			// 
 			// Settings
 			// 
@@ -246,15 +370,11 @@ namespace BudgetPP {
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(404, 461);
 			this->ControlBox = false;
-			this->Controls->Add(this->dollar);
+			this->Controls->Add(this->category_panel);
 			this->Controls->Add(this->toolbar_panel);
-			this->Controls->Add(this->dollar_text);
 			this->Controls->Add(this->total_label);
-			this->Controls->Add(this->percent_text);
 			this->Controls->Add(this->add_category);
-			this->Controls->Add(this->categoryBar);
 			this->Controls->Add(this->total_text);
-			this->Controls->Add(this->category);
 			this->Controls->Add(this->ok_button);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Settings";
@@ -263,7 +383,11 @@ namespace BudgetPP {
 			this->Text = L"Settings";
 			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Settings::Settings_Paint);
 			this->toolbar_panel->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar1))->EndInit();
+			this->category_panel->ResumeLayout(false);
+			this->category_panel->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->categoryBar2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -271,7 +395,10 @@ namespace BudgetPP {
 #pragma endregion
 	
 	private: System::Void ok_button_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->Close();
+		if (Int32::Parse(percent_text1->Text) + Int32::Parse(percent_text2->Text) + Int32::Parse(percent_text3->Text) == 100)
+			this->Close();
+		else
+			MessageBox::Show("Percentage must add to 100% of total budget");
 	}
 	private: System::Void close_button_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
@@ -292,21 +419,65 @@ namespace BudgetPP {
 	private: System::Void Settings_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 		e->Graphics->DrawRectangle(gcnew Pen(Color::Black, 3), this->DisplayRectangle);
 	}
-
-	private: System::Void categoryBar_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	
+	/*private: System::Void categoryBar_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		percent_text->Text = System::Convert::ToString(categoryBar->Value);
 		int totalAmount = Int32::Parse(total_text->Text);
 		int percentAmount = categoryBar->Value;
-		dollar_text->Text = System::Convert::ToString((totalAmount*percentAmount)/100);
+		dollar_text->Text = System::Convert::ToString((totalAmount*percentAmount) / 100);
+	}*/
+
+	private: System::Void categoryBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		percent_text1->Text = System::Convert::ToString(categoryBar1->Value);
+		int totalAmount = Int32::Parse(total_text->Text);
+		int percentAmount = categoryBar1->Value;
+		dollar_text1->Text = System::Convert::ToString((totalAmount*percentAmount)/100);
 	}
 	private: System::Void add_category_Click(System::Object^  sender, System::EventArgs^  e) {
-		TextBox^ tb = gcnew TextBox();
-		tb->Text = "Category" + i;
-		Point p = Point(category->Location.X + i, category->Location.Y * i);
-		tb->Location = p;
-		this->Controls->Add(tb);
-		i++;
+		TextBox^ category = gcnew TextBox();
+		category->Name = "category" + count;
+		category->Text = "Category " + count;
+		category->Size = System::Drawing::Size(61, 20);
+		category->Location = System::Drawing::Point(37, (60 * count) + 2);
+		category_panel->Controls->Add(category);
 
+		TextBox^ percent_text = gcnew TextBox();
+		percent_text->Name = "percent_text" + count;
+		percent_text->Location = System::Drawing::Point(274, (60 * count) + 2);
+		percent_text->Size = System::Drawing::Size(53, 20);
+		percent_text->Text = L"0";
+		category_panel->Controls->Add(percent_text);
+
+		TextBox^ dollar_text = gcnew TextBox();
+		dollar_text->Name = "dollar_text" + count;
+		dollar_text->Location = System::Drawing::Point(274, (60 * count) + 25);
+		dollar_text->Size = System::Drawing::Size(53, 20);
+		dollar_text->Text = L"0";
+		category_panel->Controls->Add(dollar_text);
+
+		TrackBar^ categoryBar = gcnew TrackBar();
+		categoryBar->Name = "categoryBar" + count;
+		categoryBar->Maximum = 100;
+		categoryBar->Location = System::Drawing::Point(104, (60 * count) + 2);
+		categoryBar->Size = System::Drawing::Size(164, 45);
+		categoryBar->TickStyle = System::Windows::Forms::TickStyle::None;
+		//categoryBar->Scroll += gcnew System::EventHandler(category_panel,&Settings::categoryBar_Scroll);
+		category_panel->Controls->Add(categoryBar);
+
+
+		count++;
+	}
+	private: System::Void categoryBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		percent_text2->Text = System::Convert::ToString(categoryBar2->Value);
+		int totalAmount = Int32::Parse(total_text->Text);
+		int percentAmount = categoryBar2->Value;
+		dollar_text2->Text = System::Convert::ToString((totalAmount*percentAmount) / 100);
+	}
+	private: System::Void categoryBar3_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		percent_text3->Text = System::Convert::ToString(categoryBar3->Value);
+		int totalAmount = Int32::Parse(total_text->Text);
+		int percentAmount = categoryBar3->Value;
+		dollar_text3->Text = System::Convert::ToString((totalAmount*percentAmount) / 100);
 	}
 };
 }
