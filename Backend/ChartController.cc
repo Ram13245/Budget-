@@ -6,7 +6,6 @@ using namespace std;
 ChartController::ChartController() { }
 
 void ChartController::getBudgetPie(Error& err, map<string, float>& data){
-	//Account user = somehow get current account;
 	Account* user = AccountController::getAccount();
 
 
