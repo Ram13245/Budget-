@@ -101,12 +101,12 @@ namespace BudgetPP {
 			this->username_text->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(54)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
 				static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->username_text->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->username_text->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->username_text->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->username_text->ForeColor = System::Drawing::Color::White;
 			this->username_text->Location = System::Drawing::Point(224, 204);
 			this->username_text->Name = L"username_text";
-			this->username_text->Size = System::Drawing::Size(185, 20);
+			this->username_text->Size = System::Drawing::Size(185, 18);
 			this->username_text->TabIndex = 3;
 			// 
 			// password_text
@@ -115,12 +115,12 @@ namespace BudgetPP {
 			this->password_text->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(54)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
 				static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->password_text->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->password_text->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->password_text->Font = (gcnew System::Drawing::Font(L"Trebuchet MS", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->password_text->ForeColor = System::Drawing::Color::White;
 			this->password_text->Location = System::Drawing::Point(224, 260);
 			this->password_text->Name = L"password_text";
-			this->password_text->Size = System::Drawing::Size(185, 20);
+			this->password_text->Size = System::Drawing::Size(185, 18);
 			this->password_text->TabIndex = 4;
 			// 
 			// signup_button
@@ -155,7 +155,7 @@ namespace BudgetPP {
 			// 
 			this->toolbar_panel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->toolbar_panel->BackColor = System::Drawing::Color::Black;
+			this->toolbar_panel->BackColor = System::Drawing::Color::Transparent;
 			this->toolbar_panel->Controls->Add(this->min_button);
 			this->toolbar_panel->Controls->Add(this->close_button);
 			this->toolbar_panel->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -267,5 +267,6 @@ namespace BudgetPP {
 		Application::Exit();
 	}
 	
+
 };
 }
