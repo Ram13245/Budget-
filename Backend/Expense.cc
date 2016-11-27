@@ -21,6 +21,6 @@ ostream& operator<<(ostream& out, const Expense& right) {
 	return out;
 }
 
-bool operator<(const int& left, const Expense& right){
-	return (float(left) < right.getAmount());
+bool operator<(const Expense& left, const Expense& right){
+	return (left.getAmount() < right.getAmount());
 }

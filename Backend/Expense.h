@@ -23,6 +23,6 @@ private:
 	string note;
 	int id;
 	
-friend bool operator<(const int& left, const Expense& right);
+friend bool operator<(const Expense& left, const Expense& right);
 friend ostream& operator<<(ostream& out, const Expense& right);
 };
