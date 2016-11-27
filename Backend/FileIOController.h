@@ -23,5 +23,10 @@ public:
     FileIOController& operator=(const FileIOController& other);
 
 private:
+    const char key = 0xD;
+    const string masterAccountsFile = "masterAccounts.txt"; // Holds account details: username, hashed-pass, account file name
 
+    string encryptDecrypt(const string& oldString) const;
+    void parseJsonEntry(Error& err, const string& entry, map<string,pair<string,string> >& userMap) const;
+    string parseToken(const string& element) const;
 };
