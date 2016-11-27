@@ -8,13 +8,35 @@ Account::Account(string usr) {
 		cout << "Username length must be between 3 and 15 characters!" << endl;
 	else{
 	for (char& a : usr){
-		if(inputs.find(a) !=std::string::npos){
+		if(inputs.find(a) != std::string::npos){
 			this->username = usr;
 		}
 		else
 			cout << "Username can only contain letters and numbers" << endl;
+		break;
 		}
 	}
+}
+
+Account::Account(string usr, const vector<Budget>& budgets){
+	string inputs = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";
+	period = new vector<Budget>();
+	for(Budget bud : budgets) {
+		period->push_back(bud);
+	}
+//		this->period = budgets;
+		if(usr.length() < 3 || usr.length() > 15)
+			cout << "Username length must be between 3 and 15 characters!" << endl;
+		else{
+		for (char& a : usr){
+			if(inputs.find(a) != std::string::npos){
+				this->username = usr;
+			}
+			else
+				cout << "Username can only contain letters and numbers" << endl;
+			break;
+			}
+		}
 }
 
 string Account::getUsername() const{
@@ -23,7 +45,13 @@ string Account::getUsername() const{
 
 vector<Budget> Account::getPeriods() const{
 	//TODO
-	return *period;
+	if (this->period == nullptr){
+		vector<Budget> test;
+		return test;
+	}
+	vector<Budget>* sameperiod = new vector<Budget>;
+	sameperiod = period;
+	return *sameperiod;
 }
 
 void Account::startNextPeriod(){

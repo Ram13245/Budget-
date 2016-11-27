@@ -12,6 +12,7 @@ using namespace std;
 class Account{
 public:
 	Account(string usr);
+	Account(string usr, const vector<Budget>&);
 	string getUsername() const;
 	vector<Budget> getPeriods() const;
 	void startNextPeriod();
