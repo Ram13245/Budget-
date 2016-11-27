@@ -1,4 +1,5 @@
 #pragma once
+#include "Dashboard.h"
 
 namespace BudgetPP {
 
@@ -237,7 +238,7 @@ namespace BudgetPP {
 	}
 
 	private: System::Void create_button_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ constring = L"datasource = localhost; port = 3306; username = root; password = eniac";
+		/*String^ constring = L"datasource = localhost; port = 3306; username = root; password = eniac";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("insert into bplusplus.user_information (iduser_information,username,password) values('" + this->password_text->Text + "','" + this->username_text->Text + "','" + this->password_text->Text + "');", conDataBase);
 		MySqlDataReader^ myReader;
@@ -251,7 +252,10 @@ namespace BudgetPP {
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
-		}
+		}*/
+		this->Close();
+		Dashboard^ dashboardScreen = gcnew Dashboard();
+		dashboardScreen->ShowDialog();
 	}
 };
 }

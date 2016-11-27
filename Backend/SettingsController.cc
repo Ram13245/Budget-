@@ -42,10 +42,12 @@ void SettingsController::removeCategory(Error&, string removeName){
 	vector<Budget> budgets = currentAccount->getPeriods();
 	Budget currentBudget = budgets.back(); //Back gets last budget(current)
 	vector<Category> currentCats = currentBudget.getCategories();
-	for(Category cCat : currentCats) {
-		if(cCat.getName() == removeName){
+	for(int i = 0; i < currentCats.size(); i++) {
+		if(currentCats[i].getName() == removeName){
 			//May need to make a change
 			//currentCats.erase(remove(currentCats.begin(),currentCats.end(), cCat),currentCats.end());
+			currentCats.erase(currentCats.begin() +i );
+			break;
 		}
 	}
 }
